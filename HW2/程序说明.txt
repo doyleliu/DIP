@@ -1,0 +1,18 @@
+题目：用matlab或C编程实现简易版JPEG 压缩解压缩算法
+
+1、主程序：myjpeg.m
+	在主程序中我们实现了编码和解码的全过程，现在编码端调用了mydct2.m,myquantization.m,zigzag.m和DCHuffmanEncoding.m，ACHuffmanEncoding.m程序，经过相应的dct变换，量化过程，Z字形扫描，DC、AC系数编码，从而得到lena.dat文件，其中lena.dat中存储的是0，1的ascii码值。
+	在解码端我们调用了myjpegdecode.m,DCdecoding,ACdecoding,mydequantization.m等程序，通过读取lena.dat中的数值，将其送入myjpegdecode.m进行解码，在将得到的解码后的矩阵通过编码的你过程即可以得到最后JPEG解码的图像。
+2、mydct2.m,myidct2.m
+	这两个程序为DCT变换的矩阵实现，采用了我上次作业所写的DCT模块。
+3、myquantization.m,mydequantization.m
+	这两个程序是使得矩阵中的每一个元素与对应的量化矩阵中相应位置的元素做操作的矩阵
+4、DCHuffmanEncoding.m，ACHuffmanEncoding.m
+	DC、AC系数编码程序，通过采用书中附录表A.3和A.4以及教材例子中的编码过程将附录表一一比对得以实现
+5、DCdecoding.m,ACdecoding.m
+	DC、AC系数解码程序，与编码过程相反，通过采用书中附录表A.3和A.4以及教材例子中的编码过程将附录表一一比对得以实现
+6、zigzag.m
+	实现书中的Z字形扫描方式，扫描的顺序进行编号。
+7、test.m
+	生成灰度图像。
+具体代码以及代码的注释都详细地标在程序中，欢迎助教查阅
